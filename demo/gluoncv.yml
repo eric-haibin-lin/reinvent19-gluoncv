@@ -1,0 +1,19 @@
+name: gluoncv
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6
+  - pip=18.1
+  - ipython
+  - ipykernel
+  - matplotlib=2.2.2
+  - regex
+  - pip:
+    - mxnet-mkl
+    - environment_kernels
+    - jupyter_contrib_nbextensions
+    - jupyter_nbextensions_configurator
+    - tqdm
+    - opencv-python
+    - gluoncv
+    - numpy
