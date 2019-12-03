@@ -8,12 +8,16 @@
 
 #### Finetune and Deploy BERT Model for Sentiment Analysis on SageMaker
 
-1. Send an email to `reinvent19-gluonnlp@request-nb.mxnet.io` to request a SageMaker notebook instance
+1. Send an email to `reinvent19-gluonnlp@request-nb.mxnet.io` to request a temporary SageMaker notebook instance
 2. Wait for a few minutes and click the notebook access URL in the follow-up email
 3. In the browser, open `reinvent19-gluonnlp/tutorial/train_deploy_bert.ipynb` and follow the instructions
 
-If the notebook access URL does not work, alternatively you can view the jupyter notebook content [here](https://nbviewer.jupyter.org/github/eric-haibin-lin/reinvent19-gluonnlp/blob/master/tutorial/train_deploy_bert.ipynb).
-If you want to reuse the content after the event, you can setup a SageMaker notebook as instructed [here](https://github.com/eric-haibin-lin/reinvent19-gluonnlp/tree/master/tutorial).
+#### FAQ
+
+- Q: Where can I view the jupyter notebook if I do not have access to the SageMaker notebook instance?
+- A: You can view the jupyter notebook content [here](https://nbviewer.jupyter.org/github/eric-haibin-lin/reinvent19-gluonnlp/blob/master/tutorial/train_deploy_bert.ipynb).
+- Q: How do I reuse the content after the event?
+- A: You can setup a SageMaker notebook as instructed [here](https://github.com/eric-haibin-lin/reinvent19-gluonnlp/tree/master/tutorial).
 
 ## 2. Run Computer Vision Models on Your Laptop
 
@@ -29,3 +33,5 @@ If you want to reuse the content after the event, you can setup a SageMaker note
 1. `conda env create -f gluoncv.yml`
 2. `conda activate gluoncv`
 3. `python pose_estimation_demo.py`
+
+![pose estimation](pose_estimation.gif)
