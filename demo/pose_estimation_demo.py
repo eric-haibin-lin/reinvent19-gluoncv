@@ -1,4 +1,4 @@
-# """3. Estimate pose from your webcam
+# """Estimate pose from your webcam
 # ====================================
 # This article will demonstrate how to estimate people's pose from your webcam video stream.
 
@@ -27,8 +27,7 @@ from gluoncv.utils.viz import cv_plot_image, cv_plot_keypoints
 # For the detector we use ``ssd_512_mobilenet1.0_coco`` as it is fast and accurate enough.
 
 ctx = mx.cpu()
-detector_name = "ssd_512_mobilenet1.0_coco"
-detector = get_model(detector_name, pretrained=True, ctx=ctx)
+detector = get_model('ssd_512_mobilenet1.0_coco', pretrained=True, ctx=ctx)
 
 # The pre-trained model tries to detect all 80 classes of objects in an image,
 # however in pose estimation we are only interested in one object class: person.
@@ -38,11 +37,6 @@ detector.reset_class(classes=['person'], reuse_weights={'person':'person'})
 detector.hybridize()
 
 # Next for the estimator, we choose ``simple_pose_resnet18_v1b`` for it is light-weighted.
-# 
-# The default ``simple_pose_resnet18_v1b`` model was trained with input size 256x192.
-# We also provide an optional ``simple_pose_resnet18_v1b`` model trained with input size 128x96.
-# The latter one is going to be faster, which means a smoother webcam demo.
-# Remember that we can load an optional pre-trained model by passing its shasum to ``pretrained``.
 
 estimator = get_model('simple_pose_resnet18_v1b', pretrained='ccd24037', ctx=ctx)
 estimator.hybridize()
@@ -81,7 +75,7 @@ for i in range(num_frames):
 
         img = cv_plot_keypoints(frame, pred_coords, confidence, class_IDs, bounding_boxs, scores,
                                 box_thresh=0.5, keypoint_thresh=0.2)
-    cv_plot_image(img)
+    cv_plot_image(img, scale=3)
     cv2.waitKey(1)
 
 # We release the webcam before exiting:
